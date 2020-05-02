@@ -145,10 +145,10 @@ Timer0_ISR(void)
     AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1;
 
     /* Store data and compute the first acquisition */
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT0 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT1 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT2 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT3 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT0 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT1 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT2 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT3 * (3 / ADC_RESOLUTION_SIGNALMODE);
 
     /* Wait Acquisition ending for SOC4 to SOC7*/
     while(0 == AdcaRegs.ADCINTFLG.bit.ADCINT2);
@@ -157,10 +157,10 @@ Timer0_ISR(void)
     AdcaRegs.ADCINTFLGCLR.bit.ADCINT2 = 1;
 
     /* Store data and compute the second acquisition */
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT4 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT5 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT6 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT7 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT4 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT5 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT6 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT7 * (3 / ADC_RESOLUTION_SIGNALMODE);
 
     /* Wait Acquisition ending for SOC8 to SOC11*/
     while(0 == AdcaRegs.ADCINTFLG.bit.ADCINT3);
@@ -172,10 +172,10 @@ Timer0_ISR(void)
     AdcaRegs.ADCSOCFRC1.all = ADC_FORCE_SOC12|ADC_FORCE_SOC13|ADC_FORCE_SOC14|ADC_FORCE_SOC15;
 
     /* Store data and compute the tired acquisition */
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT8 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT9 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT10 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT11 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT8 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT9 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT10 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT11 * (3 / ADC_RESOLUTION_SIGNALMODE);
 
     /* Wait Acquisition ending for SOC12 to SOC15*/
     while(0 == AdcaRegs.ADCINTFLG.bit.ADCINT4);
@@ -184,10 +184,10 @@ Timer0_ISR(void)
     AdcaRegs.ADCINTFLGCLR.bit.ADCINT4 = 1;
 
     /* Store data and compute the fourth acquisition */
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT12 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT13 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT14 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
-    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT15 * (3.3f / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT12 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT13 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT14 * (3 / ADC_RESOLUTION_SIGNALMODE);
+    t_rAdcResults[s_u16ResultsIndex++] = AdcaResultRegs.ADCRESULT15 * (3 / ADC_RESOLUTION_SIGNALMODE);
 
     /* Rewind indexer to the first element */
     s_u16ResultsIndex = 0;
